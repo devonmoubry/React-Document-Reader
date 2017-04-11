@@ -11,6 +11,21 @@ html {
     body {
         margin: 0;
         padding: 0;
-        background: #CACACA;
+        background: #fafafa;
+        font-family: 'Open Sans', sans-serif;
     }
 }
+
+h1 {
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+}
+
+section {
+  width: 50vw;
+  margin: 0 auto;
+  padding: 6px;
+}
+
+//font-family: 'Open Sans', sans-serif;
+//font-family: 'Gloria Hallelujah', cursive;
