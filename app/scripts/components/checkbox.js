@@ -47,13 +47,18 @@ const Checkbox = React.createClass ({
 
       return (
           <section>
-              <label htmlFor="checkRead">{this.state.labelText}</label>
-              <input type="checkbox" id="checkRead" onChange={this.alert} checked={this.state.checked} disabled={this.state.disabled}/>
-              <section className={alertMessage}>
-                  <h1> Are you sure you read this?</h1>
-                  <button onClick={this.confirm}>confirm</button>
-                  <a href="#" onClick={this.cancel}>cancel</a>
-              </section>
+            <section className={'document'}>
+                <label htmlFor="checkRead">{this.state.labelText}</label>
+                <input type="checkbox" id="checkRead" onChange={this.alert} checked={this.state.checked} disabled={this.state.disabled}/>
+            </section>
+
+            <section className={`${alertMessage} modal-container`}>
+                <div className={'modal'}>
+                    <h1> Are you sure you read this?</h1>
+                    <button onClick={this.confirm}>confirm</button>
+                    <a href="#" onClick={this.cancel}>cancel</a>
+                </div>
+            </section>
           </section>
       );
   }
