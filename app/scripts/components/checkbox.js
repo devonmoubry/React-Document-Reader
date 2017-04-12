@@ -10,21 +10,23 @@ const Checkbox = React.createClass ({
         return {
           hidden: true,
           labelText: 'Mark as Read',
-          checked: false
+          checked: false,
+          disabled: false
         };
   },
 
   alert() {
       this.setState({
           hidden: !this.state.hidden,
-          checked: true
+          checked: !this.state.checked
       });
   },
 
   confirm() {
     this.setState({
       hidden: !this.state.hidden,
-      labelText: 'Read'
+      labelText: 'Read',
+      disabled: true
     });
   },
 
@@ -46,7 +48,7 @@ const Checkbox = React.createClass ({
       return (
           <section>
               <label htmlFor="checkRead">{this.state.labelText}</label>
-              <input type="checkbox" id="checkRead" onChange={this.alert} checked={this.state.checked} />
+              <input type="checkbox" id="checkRead" onChange={this.alert} checked={this.state.checked} disabled={this.state.disabled}/>
               <section className={alertMessage}>
                   <h1> Are you sure you read this?</h1>
                   <button onClick={this.confirm}>confirm</button>
